@@ -2,53 +2,58 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="./favicon/favicon.png" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fotogram</title>
-  </head>
 
-  <body>
-    <header class="header">
-      <img class="img-logo" src="Fotogram_Logo.svg" alt="Fotogram_Logo" />
-    </header>
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="./favicon/favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fotogram</title>
+</head>
+
+<body>
+  <header class="header">
+    <img class="img-logo" src="Fotogram_Logo.svg" alt="Fotogram_Logo" />
+  </header>
+  <main>
     <section>
+
       <h1 class="title">Your personal photo album</h1>
-      <div  class="img-container"></div>
+
+      <div class="img-container"></div>
+
     </section>
-    <dialog class="dialog"id="my-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+    <dialog class="dialog" id="my-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
       <header class="dialog-header">
         <h2 id="dialog-title">My Gallery</h2>
-         <button class="close-button"onclick="closeDialog()" id="close-dialog" aria-label="Dialog schließen">
-            <img class ="close-dialog"src="./img/close.png" alt="">
-          </button>
+        <button class="close-button" onclick="closeDialog()" id="close-dialog" aria-label="Dialog schließen">
+          <img class="close-dialog" src="./img/close.png" alt="">
+        </button>
       </header>
       <section class="button-section">
 
-           <button class="preview-btn" onclick="prev()" id="preview" aria-label="preview picture">
-            <img class ="preview"src="./img/prev.png" alt="">
-          </button>
-           <button class="next-btn" onclick="next()" id="next" aria-label="next picture">
-            <img class ="next"src="./img/next.png" alt="">
-          </button>
+        <button class="preview-btn" onclick="prev()" id="preview" aria-label="preview picture">
+          <img class="preview" src="./img/prev.png" alt="">
+        </button>
+        <img class="dialog-img" id="dialog-image" src="" alt="Dialog Image" />
+        <button class="next-btn" onclick="next()"  id="next" aria-label="next picture">
+          <img class="next" src="./img/next.png" alt="">
+        </button>
 
       </section>
-        <footer>
-
-        </footer>
     </dialog>
+  </main>
+  <footer class="footer">
+    <div class="img-footer">
+      <img id="img-footer" src="./favicon/favicon.png" alt="footer" />
+    </div>
 
-    <footer class="footer">
-      <div class="img-footer">
-        <img id="img-footer" src="./favicon/favicon.png" alt="footer" />
-      </div>
+  </footer>
 
-    </footer>
-    <script src="script.js"></script>
-    <script>
+  <script src="script.js"></script>
+  <script>
 
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>

@@ -12,13 +12,10 @@ const imgContainer = document.querySelector(".img-container");
 const dialog = document.getElementById("my-dialog");
 
 
-
 // Das Bild, das im Dialog angezeigt wird
-const dialogImg = document.createElement("img");
-dialogImg.id = "dialog-img";
-dialogImg.style.width = "400px";
-dialogImg.style.height = "400px";
-dialog.appendChild(dialogImg);
+const nextBtn = document.getElementById("next");
+const dialogImg = document.getElementById("dialog-image");
+nextBtn.before(dialogImg);
 
 dialog.addEventListener("click", (e) => {
   const rect = dialog.getBoundingClientRect();
@@ -29,9 +26,9 @@ dialog.addEventListener("click", (e) => {
     e.clientY >= rect.top &&
     e.clientY <= rect.bottom;
 
-  if (!isInDialog) {
-    closeDialog();
-  }
+  //if (!isInDialog) {
+  //closeDialog();
+  //}
 });
 
 let currentIndex = 0;
@@ -43,12 +40,12 @@ function showDialogImage(index) {
   const fileName = myImg[currentIndex]
     .split("/")
     .pop()
-    .replace(/\.[^/.]+$/,);
+    .replace(/\.[^/.]+$/, "");
   dialogCaption.textContent = `Image: ${currentIndex + 1} of ${myImg.length}  ${fileName}`;
 }
 
 
-
+//
 myImg.forEach((src, i) => {
   const img = document.createElement("img");
   img.src = src;
@@ -85,13 +82,8 @@ function closeDialog() {
 
 // funktionen um nächstes oder Vorheriges Bild zu sehen
 
-function prev() {
-  if (currentIndex > 0) showDialogImage(currentIndex - 1);
-}
 
-function next() {
-  if (currentIndex < myImg.length - 1) showDialogImage(currentIndex + 1);
-}
+
 
 
 function prev() {
