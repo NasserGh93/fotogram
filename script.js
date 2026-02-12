@@ -41,7 +41,7 @@ function showDialogImage(index) {
     .split("/")
     .pop()
     .replace(/\.[^/.]+$/, "");
-  dialogCaption.textContent = `Image: ${currentIndex + 1} of ${myImg.length}  ${fileName}`;
+  dialogCaption.innerHTML = `<button  class="btn-responsiv" onclick="prev()"><img src="./img/prev.png" alt="Preview"></button>Image: ${currentIndex + 1} of ${myImg.length} <button class="btn-responsiv" onclick="next()"><img src="./img/next.png" alt="Next"></button>`;
 }
 
 

@@ -3,29 +3,42 @@
   font-family: "Raleway-Light";
   src: url("/fonts/Raleway-Light.ttf");
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-main {
-min-height: calc(100vh - 160px);
+#Dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex: 1 1 auto;
 }
+
+main {
+  min-height: calc(100vh - 160px);
+}
+
 header {
   display: flex;
   background-color: #0a222a;
   margin: 0;
 }
+
 .img-logo {
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
   width: 200px;
 }
+
 body {
   background-color: #071820;
 }
+
 .footer {
   width: 100%;
   height: 60px;
@@ -34,6 +47,7 @@ body {
   padding-left: 50px;
   background-color: #0a222a;
 }
+
 .footer-text {
   display: flex;
   color: white;
@@ -41,6 +55,7 @@ body {
   align-items: center;
   padding-left: 20px;
 }
+
 h1 {
   font-family: "Raleway-Light", sans-serif;
   display: flex;
@@ -56,6 +71,7 @@ h1 {
   width: 40px;
   height: 40px;
 }
+
 .footer {
   height: fit-content;
   display: flex;
@@ -70,7 +86,7 @@ h1 {
   gap: 16px;
   flex-wrap: wrap;
   padding: 10px;
-  margin:0;
+  margin: 0;
 }
 
 .img-container img {
@@ -79,39 +95,50 @@ h1 {
   object-fit: cover;
   border-radius: 12px;
 }
+
 .img-container img:hover {
   transform: scale(1.05);
   transition-duration: 0.3s;
   cursor: pointer;
 }
+
 .footer img {
   margin-top: 20px;
   margin-bottom: 20px;
   width: 60px;
   height: 60px;
 }
+
 dialog {
-  border:#de7d45 solid 20px;
+  max-width: 600px;
+    width: 100%;
+    margin: auto;
+  border: #de7d45 solid 20px;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin:auto;
   border: none;
   border-radius: 12px;
   padding: 20px;
   background-color: #0a222a;
   z-index: 100;
 }
-dialog img {
+
+.dialog-img {
+width: calc(100% - 90px);
+}
+
+
+
+.dialog-img-container {
   display: flex;
   justify-content: center;
-  max-width: 400px;
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
+  align-items: center;
+  width: 500px;
+  height: 500px;
 }
-button img{
+
+button img {
   display: flex;
   justify-items: end;
   width: 14px;
@@ -120,6 +147,7 @@ button img{
   box-shadow: #071820;
 
 }
+
 .button-section {
   display: flex;
   justify-content: space-between;
@@ -129,7 +157,7 @@ button img{
 
 }
 
-.dialog-header{
+.dialog-header {
   display: flex;
   justify-content: space-between;
   color: white;
@@ -137,11 +165,11 @@ button img{
 }
 
 
-#dialog-caption{
+#dialog-caption {
   color: white;
 }
 
-.close-button{
+.close-button {
   background: rgba(0, 0, 0, 0.1);
   color: white;
   border: none;
@@ -150,13 +178,11 @@ button img{
   cursor: pointer;
   border-radius: 50%;
 }
-.close-button:hover{
-  background-color: #de7d45;
-  opacity: 0.3s;
-  transition-duration: 0.5s;
-  opacity: 10;
+.btn-responsiv {
+  display: none;
 }
-.preview-btn{
+
+.preview-btn {
   background: rgba(0, 0, 0, 0.1);
   color: white;
   border: none;
@@ -166,13 +192,20 @@ button img{
   border-radius: 50%;
 
 }
-.preview-btn:hover{
+.next-btn:hover {
   background-color: #de7d45;
   opacity: 0.3s;
   transition-duration: 0.5s;
   opacity: 10;
 }
-.next-btn{
+
+.preview-btn:hover {
+  background-color: #de7d45;
+  opacity: 0.3s;
+  transition-duration: 0.5s;
+  opacity: 10;
+}
+.next-btn {
   background: rgba(0, 0, 0, 0.1);
   color: white;
   border: none;
@@ -180,12 +213,6 @@ button img{
   padding: 10px 15px;
   cursor: pointer;
   border-radius: 50%;
-}
-.next-btn:hover{
-  background-color: #de7d45;
-  opacity: 0.3s;
-  transition-duration: 0.5s;
-  opacity: 10;
 }
 
 /* Media Queries */
@@ -196,6 +223,7 @@ button img{
     flex-wrap: wrap;
     padding: 22px;
   }
+
   .img-container img {
     width: 190px;
     height: 210px;
@@ -207,25 +235,29 @@ button img{
     gap: 14px;
     padding: 20px;
   }
+
   .img-container img {
     width: 180px;
     height: 200px;
     width: 100%;
   }
 }
+
 @media (max-width: 1000px) {
   .img-container {
     gap: 12px;
     padding: 16px;
     width: 100%
   }
+
   .img-container img {
     width: 150px;
     height: 170px;
     width: 100%
   }
 }
-@media  (max-width: 800px) {
+
+@media (max-width: 800px) {
   h1 {
     font-size: 30px;
     padding-top: 30px;
@@ -233,26 +265,79 @@ button img{
 
 
 }
+
 @media (max-width: 600px) {
   .img-container {
     flex-direction: column;
     align-items: center;
   }
 }
-@media (max-width: 400px) {
-  .img-container img {
-    width: 100%;
-    height: auto;;
-  }
-}
+
 @media (max-width: 500px) {
   .footer {
     flex-direction: column;
     height: fit-content;
     padding: 20px;
   }
+
   .footer-text {
     padding: 10px 0;
   }
 
+}
+
+@media (max-width: 400px) {
+  .img-container img {
+    width: 100%;
+    height: auto;
+  }
+  .dialog-img{
+    width: 100%;
+  }
+
+  button{
+    background: rgba(0, 0, 0, 0.1);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  .btn-responsiv{
+
+    background: rgba(0, 0, 0, 0.1);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  .btn-responsiv{
+    display: inline;
+    background: rgba(0, 0, 0, 0.1);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  .btn-responsiv:hover {
+    background-color: #de7d45;
+    opacity: 0.3s;
+    transition-duration: 0.5s;
+    opacity: 10;
+  }
+
+
+  .dialog-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .preview-btn,
+  .next-btn {
+    display: none;
+  }
 }
