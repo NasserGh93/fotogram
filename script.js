@@ -53,13 +53,33 @@ myImg.forEach((src, i) => {
   img.loading = "lazy";
   img.style.width = "200px";
   img.style.height = "200px";
+  img.tabIndex = 0;
+  img.style.cursor = "pointer";
 
+  // Enter / Space öffnet den Dialog (wie ein Button):
+  img.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      showDialogImage(i);
+      openDialog();
+    }
+  });
+
+  // Maus klick bleibt:
   img.addEventListener("click", () => {
     showDialogImage(i);
     openDialog();
   });
 
+
+
   imgContainer.appendChild(img);
+
+});
+dialog.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeDialog();
+  if (e.key === "ArrowLeft") prev();
+  if (e.key === "ArrowRight") next();
 });
 // Text unter dem Bild (Bildname)
 const dialogCaption = document.createElement("p");
