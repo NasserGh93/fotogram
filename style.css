@@ -14,9 +14,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   flex: 1 1 auto;
 }
+
 
 main {
   min-height: calc(100vh - 160px);
@@ -116,7 +116,6 @@ dialog {
   border: #de7d45 solid 20px;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
   border: none;
   border-radius: 12px;
   padding: 20px;
@@ -124,19 +123,6 @@ dialog {
   z-index: 100;
 }
 
-.dialog-img {
-width: calc(100% - 90px);
-}
-
-
-
-.dialog-img-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 500px;
-  height: 500px;
-}
 
 button img {
   display: flex;
@@ -215,7 +201,6 @@ button img {
   border-radius: 50%;
 }
 
-/* Media Queries */
 
 @media (max-width: 1400px) {
   .img-container {
