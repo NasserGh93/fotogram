@@ -10,12 +10,12 @@
   box-sizing: border-box;
 }
 
-#Dialog {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1 1 auto;
+.dialog-image-size{
+ max-width: 450px;
+ max-width: 450px;
+
 }
+
 
 
 main {
@@ -316,10 +316,7 @@ button img {
   }
 
 
-  .dialog-img {
-    width: 100%;
-    height: auto;
-  }
+
 
   .preview-btn,
   .next-btn {
