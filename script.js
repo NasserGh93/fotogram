@@ -9,6 +9,7 @@ const myImg = [
 ];
 
 let currentIndex = 0;
+const dialogCaption = document.getElementById("image-caption");
 
 function containerpicture(images) {
   const container = document.getElementById("img-container");
@@ -26,6 +27,7 @@ containerpicture(myImg);
 
 function openDialog(index) {
   currentIndex = index;
+  console.log(currentIndex);
   const dialog = document.getElementById("my-dialog");
   const dialogImg = document.getElementById("dialog-image");
 
@@ -40,11 +42,19 @@ function openDialog(index) {
 
 
 function next() {
+
   currentIndex++;
 
-  if (currentIndex >= myImg.length) {
-    currentIndex = 0; // zurück zum ersten Bild
-  }
+
+  const fileName = myImg[currentIndex]
+    .split("/")
+    .pop()
+    .replace(/\.[^/.]+$/, "");
+  dialogCaption.innerHTML = `<button  class="btn-responsiv" onclick="prev()"><img src="./img/prev.png" alt="Preview"></button>Image: ${currentIndex + 1} of ${myImg.length} <button class="btn-responsiv" onclick="next()"><img src="./img/next.png" alt="Next"></button>`;
+
+  currentIndex = 0;
+
+
 
   document.getElementById("dialog-image").src = myImg[currentIndex];
 }

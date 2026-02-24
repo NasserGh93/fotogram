@@ -10,11 +10,9 @@
   box-sizing: border-box;
 }
 
-.dialog-image-size{
- max-width: 450px;
- max-width: 450px;
 
-}
+
+
 
 
 
@@ -133,6 +131,17 @@ button img {
   box-shadow: #071820;
 
 }
+
+.dialog-img
+{
+  display:flex;
+  justify-self: center;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+  object-fit:cover;
+
+  }
 
 .button-section {
   display: flex;
