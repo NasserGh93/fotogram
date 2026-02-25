@@ -9,8 +9,10 @@ const myImg = [
 ];
 
 let currentIndex = 0;
+const dialogImg = document.getElementById("dialog-image");
 const dialogCaption = document.getElementById("image-caption");
-
+const dialog = document.getElementById("my-dialog");
+const diologcontent = document.getElementById("dialog-content");
 function containerpicture(images) {
   const container = document.getElementById("img-container");
 
@@ -27,17 +29,15 @@ containerpicture(myImg);
 
 function openDialog(index) {
   currentIndex = index;
-  console.log(currentIndex);
-  const dialog = document.getElementById("my-dialog");
-  const dialogImg = document.getElementById("dialog-image");
-
-  dialogImg.src = myImg[currentIndex];
   dialog.showModal();
-  const fileName = myImg[currentIndex]
-    .split("/")
-    .pop()
-    .replace(/\.[^/.]+$/, "");
-  dialogCaption.innerHTML = `<button  class="btn-responsiv" onclick="prev()"><img src="./img/prev.png" alt="Preview"></button>Image: ${currentIndex + 1} of ${myImg.length} <button class="btn-responsiv" onclick="next()"><img src="./img/next.png" alt="Next"></button>`;
+  setImageIndex()
+
+}
+
+function setImageIndex() {
+  dialogImg.src = myImg[currentIndex];
+  dialogCaption.innerHTML = `<button  class="btn-responsiv" onclick="prev()"><img src="./img/prev.png" alt="Preview"></button>Image: ${currentIndex + 1} of
+  ${myImg.length} <button class="btn-responsiv" onclick="next()"><img src="./img/next.png" alt="Next"></button>`;
 }
 
 
@@ -45,18 +45,11 @@ function next() {
 
   currentIndex++;
 
+  if (currentIndex > myImg.length - 1) {
+    currentIndex = 0;
+  }
+  setImageIndex()
 
-  const fileName = myImg[currentIndex]
-    .split("/")
-    .pop()
-    .replace(/\.[^/.]+$/, "");
-  dialogCaption.innerHTML = `<button  class="btn-responsiv" onclick="prev()"><img src="./img/prev.png" alt="Preview"></button>Image: ${currentIndex + 1} of ${myImg.length} <button class="btn-responsiv" onclick="next()"><img src="./img/next.png" alt="Next"></button>`;
-
-  currentIndex = 0;
-
-
-
-  document.getElementById("dialog-image").src = myImg[currentIndex];
 }
 
 function prev() {
@@ -65,11 +58,33 @@ function prev() {
   if (currentIndex < 0) {
     currentIndex = myImg.length - 1;
   }
-
-  document.getElementById("dialog-image").src = myImg[currentIndex];
+  setImageIndex()
 }
 
 function closeDialog() {
-  const dialog = document.getElementById("my-dialog");
+
   dialog.close();
 }
+
+dialog.addEventListener("click", (e) => {
+  if (e.target === dialog) {
+    closeDialog()
+  }
+});
+
+
+
+document.addEventListener("keydown", (e) => {
+
+  if (!dialog.open) return;
+
+  if (e.key === "ArrowRight") {
+    e.preventDefault();
+    next();
+  } else if (e.key === "ArrowLeft") {
+    e.preventDefault();
+    prev();
+  } else if (e.key === "Escape") {
+    closeDialog();
+  }
+});
