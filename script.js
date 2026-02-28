@@ -7,6 +7,16 @@ const myImg = [
   "./img/lake.jpg",
   "./img/mountains.jpg",
 ];
+const imagesAlt = [
+
+  "Image of a bridge",
+  "Image of  bucharest",
+  "Image of a camper",
+  "Image of  danube",
+  "Image of a fan",
+  "Image of a lake",
+  "Image of  mountains",
+]
 
 let currentIndex = 0;
 const dialogImg = document.getElementById("dialog-image");
@@ -18,7 +28,7 @@ function containerpicture(images) {
 
   for (let i = 0; i < images.length; i++) {
     container.innerHTML += `
-      <img src="${images[i]}"
+      <img alt="${imagesAlt[i]}" src="${images[i]}"
            width="150"
            style="cursor:pointer"
            onclick="openDialog(${i})">
@@ -31,6 +41,7 @@ function openDialog(index) {
   currentIndex = index;
   dialog.showModal();
   setImageIndex();
+  document.body.classList.add("no-scroll");
 
 }
 
@@ -64,6 +75,7 @@ function prev() {
 
 function closeDialog() {
   dialog.close();
+  document.body.classList.remove("no-scroll")
 }
 
 dialog.addEventListener("click", (e) => {
