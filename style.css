@@ -11,6 +11,12 @@
 }
 
 
+body, html {
+  overflow: hidden;
+}
+
+
+
 main {
   min-height: calc(100vh - 160px);
 }
@@ -116,6 +122,12 @@ dialog {
   background-color: #0a222a;
   z-index: 100;
 }
+dialog.opened::backdrop{
+  opacity: 1;
+  background-color: rgb(205, 212, 9);
+  transition: all 0.5s ease-in;
+}
+
 
 
 button img {
@@ -173,6 +185,13 @@ button img {
   display: none;
 }
 
+.close-btn{
+  background: none;
+  width: 24px;
+  color: white;
+  border:none;
+
+}
 .preview-btn {
   background: rgba(0, 0, 0, 0.1);
   color: white;

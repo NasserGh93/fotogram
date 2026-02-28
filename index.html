@@ -8,44 +8,43 @@
   <link rel="icon" type="image/png" href="./favicon/favicon.png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fotogram</title>
+  <title alt="Tab-Title" aria-label="Webside-Tab-Title">Fotogram</title>
 </head>
 
 <body>
-  <header class="header">
+  <header class="header" aria-label="Body-Header">
     <img class="img-logo" src="Fotogram_Logo.svg" alt="Fotogram_Logo" />
   </header>
   <main>
     <section>
 
-      <h1 class="title">Your personal photo album</h1>
+      <h1 class="title" aria-label="WebsideTitle">Your personal photo album</h1>
 
-      <div id="img-container"     class="img-container"></div>
+      <div id="img-container"     class="img-container" alt="image-container" aria-label="Images-Contaier"></div>
 
     </section>
     <dialog class="dialog" id="my-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
  <header class="dialog-header">
-  <h2 id="dialog-title">My Gallery</h2>
-  <button onclick="closeDialog()">x</button>
+  <h2 id="dialog-title" >My Gallery</h2>
+  <button class="close-btn" onclick="closeDialog()" aria-label="CloseButton">x</button>
     </header>
     <section class="dialog-image-size">
         <img id="dialog-image" class="dialog-img"  src="" alt="Dialog Image">
     </section>
-  <section class="button-section">
+  <section class="button-section" aria-label="previewandNextButtonSection">
     <button class="preview-btn" onclick="prev()" id="preview" aria-label="preview picture">
-      <img class="preview" src="./img/prev.png" alt="">
+      <img class="preview" src="./img/prev.png" alt="preview-button-image">
     </button>
-    <div id="image-caption"></div>
+    <div id="image-caption" aria-label="Image-Discription"></div>
     <button class="next-btn" onclick="next()" id="next" aria-label="next picture">
-      <img class="next" src="./img/next.png" alt="">
+      <img class="next" src="./img/next.png" alt="next-button.imgage">
     </button>
   </section>
 </dialog>
-
   </main>
-  <footer class="footer">
+  <footer class="footer" aria-label="footer-section">
     <div class="img-footer">
-      <img id="img-footer" src="./favicon/favicon.png" alt="footer" />
+      <img id="img-footer" src="./favicon/favicon.png" alt="footer-image" aria-label="footer-image"/>
     </div>
 
   </footer>

@@ -30,13 +30,14 @@ containerpicture(myImg);
 function openDialog(index) {
   currentIndex = index;
   dialog.showModal();
-  setImageIndex()
+  setImageIndex();
 
 }
 
 function setImageIndex() {
   dialogImg.src = myImg[currentIndex];
-  dialogCaption.innerHTML = `<button  class="btn-responsiv" onclick="prev()"><img src="./img/prev.png" alt="Preview"></button>Image: ${currentIndex + 1} of
+  dialogCaption.innerHTML = `<button  class="btn-responsiv" onclick="prev()"><img src="./img/prev.png" alt="Preview">
+  </button>Image: ${currentIndex + 1} of
   ${myImg.length} <button class="btn-responsiv" onclick="next()"><img src="./img/next.png" alt="Next"></button>`;
 }
 
@@ -62,7 +63,6 @@ function prev() {
 }
 
 function closeDialog() {
-
   dialog.close();
 }
 
