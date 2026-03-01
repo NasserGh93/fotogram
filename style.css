@@ -113,7 +113,6 @@ dialog {
   max-width: 600px;
     width: 100%;
     margin: auto;
-  border: #de7d45 solid 20px;
   justify-content: center;
   align-items: center;
   border: none;
@@ -244,7 +243,6 @@ button img {
   .img-container img {
     width: 180px;
     height: 200px;
-    width: 100%;
   }
 }
 
@@ -252,13 +250,11 @@ button img {
   .img-container {
     gap: 12px;
     padding: 16px;
-    width: 100%
   }
 
   .img-container img {
     width: 150px;
     height: 170px;
-    width: 100%
   }
 }
 
@@ -288,6 +284,12 @@ button img {
   .footer-text {
     padding: 10px 0;
   }
+  .img-container img {
+  width: 200px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
 
 }
 
