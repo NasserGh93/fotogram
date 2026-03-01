@@ -28,11 +28,10 @@ function containerpicture(images) {
 
   for (let i = 0; i < images.length; i++) {
     container.innerHTML += `
+      <button type="button" onclick="openDialog(${i})">
       <img alt="${imagesAlt[i]}" src="${images[i]}"
-           width="150"
-           style="cursor:pointer"
            onclick="openDialog(${i})">
-    `;
+    </button>`;
   }
 }
 containerpicture(myImg);
